@@ -9,8 +9,47 @@ class HomePage extends StatelessWidget {
         appBar: AppBar(
           title: Text("Componentes"),
         ),
-        body: _lista());
+        body: HomePageList());
   }
+}
 
-  _lista() {}
+class HomePageList extends StatelessWidget {
+  const HomePageList({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+        ListTile(
+          title: Text("Hola Mundo"),
+        ),
+      ],
+    );
+  }
 }

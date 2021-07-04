@@ -1,3 +1,5 @@
+import 'package:first_flutter_app/src/providers/menu_provider.dart';
+import 'package:first_flutter_app/src/utils/icono_string_util.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,36 +22,27 @@ class HomePageList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-        ListTile(
-          title: Text("Hola Mundo"),
-        ),
-      ],
+    return FutureBuilder(
+      future: menuProvider.cargarData(),
+      initialData: [],
+      builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot) {
+        return ListView(children: _listaItems(snapshot.data ?? []));
+      },
     );
+  }
+
+  List<Widget> _listaItems(List<dynamic> data) {
+    List<Widget> list = [];
+    data.map((e) => RouteItem.fromMap(e)).toList().forEach((e) {
+      list.add(ListTile(
+        title: Text(e.texto),
+        leading: Icon(stringToIconPresenter(e.icon), color: Colors.blue),
+        trailing: Icon(Icons.keyboard_arrow_right, color: Colors.blue),
+        subtitle: Text(e.ruta),
+        onTap: () {},
+      ));
+      list.add(SizedBox(height: 1, child: Divider()));
+    });
+    return list;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:first_flutter_app/src/pages/alert_page.dart';
+import 'package:first_flutter_app/src/pages/animated_container.dart';
 import 'package:first_flutter_app/src/pages/avatar_page.dart';
 import 'package:first_flutter_app/src/pages/card_page.dart';
 import 'package:first_flutter_app/src/pages/home_page.dart';
@@ -11,4 +12,5 @@ Map<String, WidgetBuilder> getAppRoutes() => {
       "alert": getBuilder(AlertPage()),
       "avatar": getBuilder(AvatarPage()),
       "card": getBuilder(CardPage()),
+      "animated_container": getBuilder(AnimatedContainerPage())
     };

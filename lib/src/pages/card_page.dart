@@ -11,7 +11,32 @@ class CardPage extends StatelessWidget {
       ),
       body: ListView(
         padding: EdgeInsets.all(4),
-        children: [CardType1(), SizedBox(height: 30), CardType2()],
+        children: [
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+          CardType1(),
+          SizedBox(height: 30),
+          CardType2(),
+          SizedBox(height: 30),
+        ],
       ),
     );
   }
@@ -23,6 +48,8 @@ class CardType1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 10,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Column(
         children: [
           ListTile(
@@ -51,15 +78,24 @@ class CardType2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        child: Column(children: <Widget>[
-      FadeInImage(
-        placeholder: AssetImage("assets/jar-loading.gif"),
-        image: NetworkImage(
-            "https://images.unsplash.com/photo-1625347752245-e1440e5b6c85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80"),
-      ),
-      Container(
-          padding: EdgeInsets.symmetric(vertical: 10),
-          child: Text("Ni idea de qué poner"))
-    ]));
+        clipBehavior: Clip.antiAlias,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              FadeInImage(
+                placeholder: AssetImage("assets/jar-loading.gif"),
+                image: NetworkImage(
+                  "https://images.unsplash.com/photo-1625347752245-e1440e5b6c85?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1534&q=80",
+                ),
+                fadeInDuration: Duration(milliseconds: 200),
+                height: 250,
+                fit: BoxFit.cover,
+              ),
+              Container(
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.symmetric(vertical: 10),
+                  child: Text("Ni idea de qué poner"))
+            ]));
   }
 }

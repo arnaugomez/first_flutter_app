@@ -27,6 +27,11 @@
             "texto": "Campos de input"
         },
         {
+            "ruta" : "list-view",
+            "icon" : "list",
+            "texto": "ListView, vista de lista"
+        },
+        {
             "ruta" : "slider",
             "icon" : "slider",
             "texto": "Slider"
